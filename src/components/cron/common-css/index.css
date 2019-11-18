@@ -1,0 +1,37 @@
+.cron-box {
+  margin: 0 auto;
+  width: 800px;
+  border: 1px solid #999;
+  padding: 5px;
+  border-radius: 4px;
+}
+.wrapper {
+  padding-left: 10px;
+}
+.cron-wrapper {
+  display: flex;
+}
+.corn-left {
+  width: 530px;
+}
+.corn-right {
+  width: 270px;
+  border-left: 1px solid #999;
+  margin-left: 5px;
+}
+.wrapper-item {
+  margin-bottom: 20px;
+}
+.check-box,
+.ant-radio-wrapper {
+  display: flex;
+}
+.tip-info {
+  color: #999;
+}
+.table-box {
+  width: 100%;
+  padding-top: 32px;
+  padding-left: 5px;
+  overflow-y: auto;
+}
