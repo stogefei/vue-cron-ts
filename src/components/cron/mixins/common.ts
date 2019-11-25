@@ -87,7 +87,11 @@ export default class CronMixin extends Vue {
         result.push("L");
         break;
       case TYPE_SPECIFY:
-        result.push(this.valueList.join(","));
+        const sortArr = this.valueList.sort((a, b) => {
+          return a - b;
+        });
+        console.log(sortArr, "sortArr");
+        result.push(sortArr.join(","));
         break;
       default:
         result.push(this.DEFAULT_VALUE);
@@ -127,7 +131,10 @@ export default class CronMixin extends Vue {
       } else if (value.indexOf("W") >= 0) {
         this.type = TYPE_WORK; // 工作日
         const values = value.split("W");
-        if (!values[0] && !isNaN(values[0])) {
+        console.log(values[0], 'values[0]');
+        console.log(isNaN(values[0]));
+        // console.log(!isNaN(values[0]), '!isNaN(values[0])')
+        if (values[0] && !isNaN(values[0])) {
           this.valueWork = parseInt(values[0], 10);
         }
       } else if (value.indexOf("L") >= 0) {
@@ -136,7 +143,10 @@ export default class CronMixin extends Vue {
         this.valueLast = parseInt(values[0], 10);
       } else if (value.indexOf(",") >= 0 || !isNaN(value)) {
         this.type = TYPE_SPECIFY; // 指定值
-        // this.valueList = value.split(",").map((item: any) => parseInt(item, 10));
+        console.log(this.valueList, "this.valueList");
+        this.valueList = value
+          .split(",")
+          .map((item: any) => parseInt(item, 10));
       } else {
         this.type = TYPE_EVERY;
       }

@@ -1,6 +1,13 @@
 <template>
   <div class="hello">
     <Cron v-model="cronValue"/>
+    <div style="width:70%;margin:0 auto">
+      <h3>检验表达式</h3>
+      <a-input placeholder='输入表达式' v-model="cronValue2"></a-input>
+      <br/>
+      <br/>
+      <a-button type='primary' @click="test" block>检验</a-button>
+    </div>
   </div>
 </template>
 
@@ -14,7 +21,12 @@ import Cron from "./cron/index.vue";
   }
 })
 export default class HelloWorld extends Vue {
-  public cronValue: any = "0/14 3 5 7-8 1 ?";
+  public cronValue: any = "";
+  public cronValue2: any = "";
+
+  test() {
+    this.cronValue = this.cronValue2
+  }
 }
 </script>
 

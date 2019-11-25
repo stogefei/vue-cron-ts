@@ -8,7 +8,7 @@
                 </a-radio>
             </div>
             <div class="wrapper-item">
-                <a-radio :style="radioStyle" :value="TYPE_EVERY" :disabled="disableChoice">每月</a-radio>
+                <a-radio :style="radioStyle" :value="TYPE_EVERY" :disabled="disableChoice">每周</a-radio>
             </div>
             <div class="wrapper-item">
                 <a-radio :style="radioStyle" :value="TYPE_RANGE" :disabled="disableChoice">
